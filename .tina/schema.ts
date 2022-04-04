@@ -1,9 +1,10 @@
-import { defineSchema, defineConfig } from "tinacms";
+import { defineConfig, defineSchema } from "tinacms";
+
 import { contentBlockSchema } from "../components/blocks/content";
 import { featureBlockShema } from "../components/blocks/features";
 import { heroBlockSchema } from "../components/blocks/hero";
-import { testimonialBlockSchema } from "../components/blocks/testimonial";
 import { iconSchema } from "../components/icon";
+import { testimonialBlockSchema } from "../components/blocks/testimonial";
 
 export default defineSchema({
   collections: [
@@ -309,7 +310,7 @@ export default defineSchema({
       label: "Authors",
       name: "authors",
       path: "content/authors",
-      format: 'md',
+      format: "md",
       fields: [
         {
           type: "string",
@@ -359,6 +360,11 @@ export const tinaConfig = defineConfig({
   mediaStore: async () => {
     const pack = await import("next-tinacms-cloudinary");
     return pack.TinaCloudCloudinaryMediaStore;
+  },
+  tinaioConfig: {
+    identityApiUrlOverride: "https://bm-identity.tinajs.dev",
+    contentApiUrlOverride: "https://bm-content.tinajs.dev",
+    frontendUrlOverride: "http://localhost:3002",
   },
   cmsCallback: (cms) => {
     /**
