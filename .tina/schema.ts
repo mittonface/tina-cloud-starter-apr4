@@ -364,7 +364,7 @@ export const tinaConfig = defineConfig({
   tinaioConfig: {
     identityApiUrlOverride: "https://bm-identity.tinajs.dev",
     contentApiUrlOverride: "https://bm-content.tinajs.dev",
-    frontendUrlOverride: "http://localhost:3002",
+    frontendUrlOverride: "https://bm-frontend.tinajs.dev",
   },
   cmsCallback: (cms) => {
     /**
