@@ -13,6 +13,7 @@ export default defineSchema({
       name: "posts",
       path: "content/posts",
       format: "mdx",
+
       fields: [
         {
           type: "string",
@@ -112,6 +113,12 @@ export default defineSchema({
             },
           ],
           isBody: true,
+        },
+      ],
+      indexes: [
+        {
+          name: "title-date",
+          fields: [{ name: "title" }, { name: "date" }],
         },
       ],
     },

@@ -204,6 +204,33 @@
           ]
         }
       ],
+      "indexes": [
+        {
+          "name": "title-date",
+          "fields": [
+            {
+              "name": "title",
+              "namespace": [
+                "posts",
+                "title-date",
+                "title"
+              ]
+            },
+            {
+              "name": "date",
+              "namespace": [
+                "posts",
+                "title-date",
+                "date"
+              ]
+            }
+          ],
+          "namespace": [
+            "posts",
+            "title-date"
+          ]
+        }
+      ],
       "namespace": [
         "posts"
       ]
